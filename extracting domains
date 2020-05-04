@@ -1,0 +1,38 @@
+import os
+import pandas as pd
+print(os.getcwd())
+os.chdir("C:\\Users\\User\\Downloads\\B10\\Assignments\\python")
+data=pd.read_excel("Domain extraction.xlsx")
+print(data)
+# =============================================================================
+# username extraction 
+# =============================================================================
+data['Email'].str.split('@').str[0]
+#output:
+0           mojoacademy
+1        mam.sandela369
+2        Rohith_Sureddi
+3        sureddi.rohith
+4        Sravan_Mannava
+5    sravan.datascience
+6         vamshikrishna
+7     krishnavamshi9959
+8       mrunalini_putta
+9        mrunaliniputta
+Name: Email, dtype: object
+# =============================================================================
+# domain extraction
+# =============================================================================
+data['Email'].str.split('@').str[1].str[0:-4]
+#output:
+0    mojotics
+1       gmail
+2       yahoo
+3       gmail
+4        live
+5       gmail
+6         aol
+7       gmail
+8     hotmail
+9       gmail
+Name: Email, dtype: object
